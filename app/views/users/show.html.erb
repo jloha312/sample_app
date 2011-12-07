@@ -1,0 +1,16 @@
+<div class="main-content">
+	<h2>
+		<%= gravatar_for @user %>
+		<%= @user.name %>
+	</h2>
+</div>
+
+<div class="side-content">
+	<div class="page-flip">
+		<strong>Name</strong> <%= @user.name %><br />
+		<strong>URL</strong>  <%= link_to user_path(@user), @user %>
+	</div>
+</div>
+	
+<div class="clear"></div>
+	

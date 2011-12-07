@@ -1,5 +1,8 @@
 SampleApp::Application.routes.draw do  
-  get "users/new"
+  #get "users/new" , can remove now that resources :users added cause it automatically adds all routes for users!
+  
+  resources :users
+  
   match '/signup',  :to => 'users#new'
   
   root :to => 'pages#home'
