@@ -43,11 +43,11 @@ SampleApp::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
+  #config.assets.precompile += %w( search.js )
   
   # Add Precompile for blueprint because throwing a precompile error in Heroku...
   # http://stackoverflow.com/questions/7443536/blueprint-screen-css-isnt-precompiled
-  config.assets.precompile += %w( *.css )
+  config.assets.precompile += %w( *.css custom.css )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
