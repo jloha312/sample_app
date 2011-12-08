@@ -34,3 +34,4 @@ application.js: application-515a482bdb7ca5ec9ac39513ad765f29.js
 application.css: application-e18e18289eab375f32d8cd8ef6e81348.css
 blueprint/screen.css: blueprint/screen-56cf1e77dd0ddf0a1400ac0681b4729c.css
 blueprint/print.css: blueprint/print-e8a3c1d15481d968b45744b9dfdbb0af.css
+blueprint/ie.css: blueprint/ie-e74efa906a10b340155784d2bad8c799.css
