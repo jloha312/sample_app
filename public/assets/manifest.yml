@@ -32,3 +32,5 @@ jquery-ui.min.js: jquery-ui.min-2b432ef5545e6620f94e7638b7574058.js
 jquery.min.js: jquery.min-ac6382033c1c5e27ebbc5a5a0597ccb9.js
 application.js: application-515a482bdb7ca5ec9ac39513ad765f29.js
 application.css: application-e18e18289eab375f32d8cd8ef6e81348.css
+blueprint/screen.css: blueprint/screen-56cf1e77dd0ddf0a1400ac0681b4729c.css
+blueprint/print.css: blueprint/print-e8a3c1d15481d968b45744b9dfdbb0af.css
