@@ -47,7 +47,7 @@ SampleApp::Application.configure do
   
   # Add Precompile for blueprint because throwing a precompile error in Heroku...
   # http://stackoverflow.com/questions/7443536/blueprint-screen-css-isnt-precompiled
-  config.assets.precompile += %w( blueprint/screen.css blueprint/print.css )
+  config.assets.precompile += %w( blueprint/screen.css blueprint/print.css blueprint/ie.css )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
