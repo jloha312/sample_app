@@ -1,9 +1,14 @@
 SampleApp::Application.routes.draw do  
+  # removed when added session new/create/destroy....   get "sessions/new"
+
   #get "users/new" , can remove now that resources :users added cause it automatically adds all routes for users!
   
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
   
   match '/signup',  :to => 'users#new'
+  match '/signin',  :to => 'sessions#new'  
+  match '/signout', :to => 'sessions#destroy'
   
   root :to => 'pages#home'
   

@@ -30,6 +30,12 @@ Spork.prefork do
     # examples within a transaction, remove the following line or assign false
     # instead of true.
     config.use_transactional_fixtures = true
+    
+    def test_sign_in(user)
+      # After running test_sign_in, the current_user will not be nil, so signed_in? will be true.
+      # With this spec helper in hand, the test for signout is straightforward: sign in as a (factory) user and then hit the destroy action and verify that the user gets signed out
+      controller.sign_in(user)
+    end
   end
   
 end
