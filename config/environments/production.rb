@@ -14,8 +14,8 @@ SampleApp::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
-  # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  # Fallback to assets pipeline if a precompiled asset is missed
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -47,7 +47,7 @@ SampleApp::Application.configure do
   
   # Add Precompile for blueprint because throwing a precompile error in Heroku...
   # http://stackoverflow.com/questions/7443536/blueprint-screen-css-isnt-precompiled
-  config.assets.precompile += %w( *.css custom.css )
+  config.assets.precompile += %w( *.css custom.css *.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
