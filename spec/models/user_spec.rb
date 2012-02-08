@@ -8,6 +8,10 @@
 #  created_at         :datetime
 #  updated_at         :datetime
 #  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean         default(FALSE)
+#  username           :string(255)
+#  permalink          :string(255)
 #
 
 require 'spec_helper'
@@ -56,9 +60,9 @@ describe User do
   end
   
   it "should accept valid usernames" do
-    usernames = %w[john.lohavichan johnlohavichan john-lohavichan john_lohavichan]
+    usernames = %w[johnlohavichan john-lohavichan john_lohavichan]
     usernames.each do |username_entries|
-      valid_username_user = User.new(@attr.merge(:username => username_entires))
+      valid_username_user = User.new(@attr.merge(:username => username_entries))
       valid_username_user.should be_valid
     end
   end  

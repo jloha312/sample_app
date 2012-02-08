@@ -14,7 +14,7 @@ gem 'rufus-mnemo', '1.2.2'
 
 group :development do
 	gem 'rspec-rails', '2.6.1'
-	gem 'annotate', :git => 'git://github.com/ctran/annotate_models.git'
+	gem 'annotate', '~> 2.4.1.beta'
 	gem 'faker', '0.3.1'
 end
 

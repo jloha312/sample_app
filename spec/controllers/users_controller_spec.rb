@@ -23,15 +23,15 @@ describe UsersController do
       before(:each) do      
         
         @user = test_sign_in(Factory(:user))
-        second = Factory(:user, :name => "Bob", :email => "another@example.com")
-        third  = Factory(:user, :name => "Ben", :email => "another@example.net")
+        second = Factory(:user, :name => "Bob", :username => "bob", :email => "another@example.com")
+        third  = Factory(:user, :name => "Ben", :username => "ben", :email => "another@example.net")
         
         @users = [@user, second, third]
         30.times do
-          @users << Factory(:user, :email => Factory.next(:email))
+          @users << Factory(:user, :username => Factory.next(:username), :email => Factory.next(:email))
         end
         
-        admin = Factory(:user, :email => "admin@example.com", :admin => true)
+        admin = Factory(:user, :username => "adminexample", :email => "admin@example.com", :admin => true)
         test_sign_in(admin)
       end
       
@@ -110,6 +110,11 @@ describe UsersController do
       response.should have_selector("input[name='user[name]'][type='text']")
     end
     
+    it "should have a username field" do
+      get :new
+      response.should have_selector("input[name='user[username]'][type='text']")
+    end
+    
     it "should have an email field" do
       get :new
       response.should have_selector("input[name='user[email]'][type='text']")
@@ -131,7 +136,7 @@ describe UsersController do
     describe "failure" do
       
       before(:each) do
-        @attr = { :name => "", :email => "", :password => "",
+        @attr = { :name => "", :username => "", :email => "", :password => "",
                   :password_confirmation => "" }
       end
       
@@ -155,7 +160,7 @@ describe UsersController do
     describe "success" do
       
       before(:each) do
-        @attr = { :name => "New User", :email => "user@example.com",
+        @attr = { :name => "New User", :username => "newuser", :email => "user@example.com",
                   :password => "foobar", :password_confirmation => "foobar" }
       end
       
@@ -216,7 +221,7 @@ describe UsersController do
       describe "failure" do
         
         before(:each) do
-          @attr = { :email => "", :name => "", :password => "",
+          @attr = { :name => "", :username => "", :email => "", :password => "",
                     :password_confirmation => "" }
         end
       
@@ -234,7 +239,7 @@ describe UsersController do
       describe "success" do
         
         before(:each) do
-          @attr = { :name => "New Name", :email => "user@example.org",
+          @attr = { :name => "New Name", :username => "newname", :email => "user@example.org",
                     :password => "barbaz", :password_confirmation => "barbaz" }
         end
         
@@ -242,6 +247,7 @@ describe UsersController do
           put :update, :id => @user, :user => @attr
           @user.reload
           @user.name.should == @attr[:name]
+          @user.username.should == @attr[:username]
           @user.email.should == @attr[:email]
         end
         
@@ -280,7 +286,7 @@ describe UsersController do
     describe "for signed-in users" do
       
       before(:each) do
-        wrong_user = Factory(:user, :email => "user@example.net")
+        wrong_user = Factory(:user, :username => "userexamplenet", :email => "user@example.net")
         test_sign_in(wrong_user)
       end
       
@@ -320,7 +326,7 @@ describe UsersController do
     describe "as an admin user" do
       
       before(:each) do
-        admin = Factory(:user, :email => "admin@example.com", :admin => true)
+        admin = Factory(:user, :username => "adminexamplecom", :email => "admin@example.com", :admin => true)
         test_sign_in(admin)
       end
       

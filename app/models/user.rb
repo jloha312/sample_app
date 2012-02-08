@@ -8,17 +8,27 @@
 #  created_at         :datetime
 #  updated_at         :datetime
 #  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean         default(FALSE)
+#  username           :string(255)
+#  permalink          :string(255)
 #
 
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :username, :email, :password, :password_confirmation
   
+  username_regex = /\A[\w\-]+\z/i
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   
   validates :name,  :presence   => true,
                     :length     => { :maximum => 50 }
                     
+  validates :username,  :presence   => true,
+                        :length     => { :maximum => 50 },
+                        :format     => { :with => username_regex },
+                        :uniqueness => { :case_sensitive => false }
+                        
   validates :email, :presence   => true,
                     :format     => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
