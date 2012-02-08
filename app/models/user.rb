@@ -11,7 +11,6 @@
 #  salt               :string(255)
 #  admin              :boolean         default(FALSE)
 #  username           :string(255)
-#  permalink          :string(255)
 #
 
 class User < ActiveRecord::Base
