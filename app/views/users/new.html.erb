@@ -8,6 +8,13 @@
 		<%= f.text_field :name %>
 		<p></p>
 	</div>
+	
+	<div class="field">
+		<%= f.label :username %><br />
+		<%= f.text_field :username %>
+		<p>Acceptable: a-z, 0-9, -, _<br />
+		Example: "john" will be displayed as "www.grademypitch.com/users/john"</p>
+	</div>
 
 	<div class="field">
 		<%= f.label :email %><br />
