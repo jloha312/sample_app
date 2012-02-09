@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
                        :confirmation => true,
                        :length       => { :within => 6..40 }
                        
-  before_save :encrypt_password
+  before_save :encrypt_password, :create_permalink
   
   #Returns true if the user's password matches the submitted password
   def has_password?(submitted_password)
@@ -56,6 +56,10 @@ class User < ActiveRecord::Base
     (user && user.salt == cookie_salt) ? user : nil
   end
   
+  def to_param
+    permalink
+  end
+  
   private
     def encrypt_password
       self.salt = make_salt unless has_password?(password)
@@ -72,5 +76,9 @@ class User < ActiveRecord::Base
     
     def secure_hash(string)
       Digest::SHA2.hexdigest(string)
+    end
+    
+    def create_permalink
+      self.permalink = username.downcase
     end
 end

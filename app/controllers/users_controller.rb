@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_filter :admin_user,   :only => [:index, :destroy]
   
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by_permalink(params[:id])
     @title = @user.name
   end
   
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by_permalink(params[:id])
     if @user.update_attributes(params[:user])
       flash[:success] = "Profile updated."
       redirect_to @user
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
   end
   
   def destroy
-    User.find(params[:id]).destroy
+    User.find_by_permalink(params[:id]).destroy
     flash[:success] = "User destroyed."
     redirect_to users_path
   end
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
     end
     
     def correct_user
-      @user = User.find(params[:id])
+      @user = User.find_by_permalink(params[:id])
       redirect_to(root_path) unless current_user?(@user)
     end
     

@@ -239,7 +239,7 @@ describe UsersController do
       describe "success" do
         
         before(:each) do
-          @attr = { :name => "New Name", :username => "newname", :email => "user@example.org",
+          @attr = { :name => "New Name", :username => "newname", :permalink => "newname", :email => "user@example.org",
                     :password => "barbaz", :password_confirmation => "barbaz" }
         end
         
@@ -248,15 +248,16 @@ describe UsersController do
           @user.reload
           @user.name.should == @attr[:name]
           @user.username.should == @attr[:username]
+          @user.permalink.should == @attr[:permalink]
           @user.email.should == @attr[:email]
         end
         
         it "should redirect to the user show page" do
           put :update, :id => @user, :user => @attr
-          response.should redirect_to(user_path(@user))
+          response.should redirect_to(user_path(assigns(:user)))
         end
         
-        it "should ahve a flash message" do
+        it "should have a flash message" do
           put :update, :id => @user, :user => @attr
           flash[:success].should =~ /updated/
         end
