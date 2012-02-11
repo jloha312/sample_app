@@ -12,6 +12,14 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.pre2'
 gem 'rufus-mnemo', '1.2.2'
 
+
+gem 'haml', '~> 3.1.4'
+gem 'sass'
+gem 'fastercsv', '~> 1.5.4'
+gem 'formtastic', '1.2.4'
+gem 'uuid', '~> 2.3.5'
+gem 'surveyor'
+
 group :development do
 	gem 'rspec-rails', '2.6.1'
 	gem 'annotate', '~> 2.4.1.beta'
