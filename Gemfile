@@ -18,6 +18,7 @@ gem 'sass'
 gem 'fastercsv', '~> 1.5.4'
 gem 'formtastic', '1.2.4'
 gem 'uuid', '~> 2.3.5'
+gem 'therubyrhino', '~> 1.73.1'
 gem 'surveyor'
 
 group :development do
