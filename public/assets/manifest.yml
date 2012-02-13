@@ -28,6 +28,11 @@ blueprint/plugins/link-icons/icons/xls.png: blueprint/plugins/link-icons/icons/x
 blueprint/plugins/link-icons/readme.txt: blueprint/plugins/link-icons/readme-c05f7b4f893137768f58ec83f0e738b9.txt
 blueprint/plugins/rtl/readme.txt: blueprint/plugins/rtl/readme-31ae4365e62f271c051768772ef80983.txt
 blueprint/src/grid.png: blueprint/src/grid-a3e8e6a6df57000ec00b24e8ec862608.png
+surveyor/next.gif: surveyor/next-81ede67b35e72aea9a58d24625978ae1.gif
+surveyor/prev.gif: surveyor/prev-c848025ec2ecab08bc0d27d130a4e0b4.gif
+surveyor/jquery.blockUI.js: surveyor/jquery.blockUI-456d7169c42fb97d012b101acafce73d.js
+surveyor/jquery.surveyor.js: surveyor/jquery.surveyor-cf22cbf0ceabc4fcd133cb8c5f7f138e.js
+surveyor/jquery.tools.min.js: surveyor/jquery.tools.min-972f5aa46437920f1c7e0a3618f79dcc.js
 jquery-ui.min.js: jquery-ui.min-2b432ef5545e6620f94e7638b7574058.js
 jquery.min.js: jquery.min-ac6382033c1c5e27ebbc5a5a0597ccb9.js
 application.js: application-52116d0b728677d6d41577f6805c09d8.js
@@ -50,6 +55,10 @@ pages.css: pages-1c9609bc58b1e77c196de29021583379.css
 sessions.css: sessions-1c9609bc58b1e77c196de29021583379.css
 users.css: users-1c9609bc58b1e77c196de29021583379.css
 jquery-ui.css: jquery-ui-b49cccf6e876b48c373abcc642fa45a8.css
+surveyor.css: surveyor-ee81bee727312fea0e98c42b16427c1a.css
+surveyor/dateinput.css: surveyor/dateinput-1a393e619e4b357dec985989d4210110.css
+surveyor/reset.css: surveyor/reset-f4d37e1b2d36420a9c0b5570e1dab80f.css
+surveyor/results.css: surveyor/results-37cbc4cadc6f08107f7c35c0e1715565.css
 pages.js: pages-d6c03004c3644316b353c7381326118a.js
 sessions.js: sessions-d6c03004c3644316b353c7381326118a.js
 users.js: users-d6c03004c3644316b353c7381326118a.js
