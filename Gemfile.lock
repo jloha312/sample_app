@@ -172,6 +172,7 @@ DEPENDENCIES
   autotest-growl (= 0.2.9)
   autotest-rails-pure (= 4.1.2)
   coffee-rails (~> 3.1.0)
+  execjs
   factory_girl_rails
   faker (= 0.3.1)
   fastercsv (~> 1.5.4)
