@@ -18,7 +18,7 @@ gem 'sass'
 gem 'fastercsv', '~> 1.5.4'
 gem 'formtastic', '1.2.4'
 gem 'uuid', '~> 2.3.5'
-gem 'execjs'
+gem 'execjs', '~> 1.3.0'
 gem 'surveyor'
 
 group :development do
