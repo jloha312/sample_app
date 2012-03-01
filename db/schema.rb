@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120211034501) do
+ActiveRecord::Schema.define(:version => 20120214165700) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -60,6 +60,24 @@ ActiveRecord::Schema.define(:version => 20120211034501) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "polls", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "overall_grade"
+    t.string   "personalization"
+    t.string   "relevance"
+    t.string   "value_proposition"
+    t.string   "design"
+    t.string   "other"
+    t.string   "responder_name"
+    t.string   "responder_email"
+    t.string   "comments"
+    t.string   "next_steps"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "polls", ["user_id", "created_at"], :name => "index_polls_on_user_id_and_created_at"
 
   create_table "question_groups", :force => true do |t|
     t.text     "text"

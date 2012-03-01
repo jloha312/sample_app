@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :name, :username, :email, :password, :password_confirmation
   
+  has_many :polls, :dependent => :destroy
+  
   username_regex = /\A[\w\-]+\z/i
   email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   

@@ -1,22 +1,15 @@
-<h2>Help</h2>
-
-<div class="main-content">
+	<% flash.now[:success] = "Signup Success welcome to Grademypitch!" %>
+    
 	<p></p>
 	<p></p>
-	<h3 class="box-title"><a name="getting_started">GETTING STARTED</a></h3>
+	<h2>Getting started in 3 Steps</h2>
 	<p></p>
 
 		<h3>Step 1: Your Grademypitch address is</h3>
 		<p></p>
-		
-		<% if current_user.blank? %>
-			<h2>NONE</h2>
-			<%= link_to "Sign up now!", signup_path, :class => "button_new" %>
-			<p></p><br />
-			
-		<% else %>
-			<h2>www.grademypitch.com<%= user_path(@user) %></h2><br />
-		<% end %>
+		<h2>
+			www.grademypitch.com<%= user_path(@user) %>
+		</h2><br />
 		<p></p>
 				
 		<h3>Step 2: Using your Grademypitch address</h3>
@@ -82,32 +75,10 @@
 		
 		<h3>Step 3: Viewing your Grades</h3>
 		<p>Just sign in at Grademypitch and click "Grades" to review your feedback.</p>
+		
+		<p></p>
+		<h4>This information is also available in Help.</h4>
+		<p></p>
+		<p></p>
+		<%= link_to "Continue to see your Grades page", current_user, :class => "button_new" %>
 	
-	
-	<p></p>
-	<p></p>
-	<h3 class="box-title"><a name="sample_grading_page">SAMPLE GRADING PAGE</a></h3>
-	<p>The following shows what the grading page looks like and the pitch areas that can be graded.<br />
-	   This is what people see when they click on your grademypitch address. In this example we are
-	   assuming that someone is visiting <strong>www.grademypitch.com/users/exampleuser</strong> to grade their pitch.
-	   It is an exact copy except "Example User" is replaced with your name.
-	   It is also fully functional except for the submit button.<br /><br />
-	   
-	   So feel free to play around with it to see how it works!  You won't break anything.
-	</p>
-	<p></p>
-	<%= render 'shared/poll_form' %>	
-</div>	
-	
-<div class="side-content">
-	<div class="page-flip">
-		<h4 class="box-title">HELP CONTENTS</h4>
-
-        <ul class="side-nav">
-            <li><a href="#getting_started">Getting Started</a> </li>
-            <li class="last"><a href="#sample_grading_page">Sample Grading Page</a></li>
-        </ul>
-	</div>
-</div>
-
-<div class="clear"></div>

@@ -3,14 +3,50 @@
 		<%= gravatar_for @user %>
 		<%= @user.name %>
 	</h2>
+	
+	<% unless @user_to_grade == current_user %>
+		<%= render 'shared/poll_form' %>
+	<% end %>
+	
+	<% if signed_in? %>
+			<h2></h2><br />
+			<h2>You have <%= @user.polls.count %> Graded Pitches</h2>
+			
+			<% if @user.polls.empty? %>
+				<h4>Unfortunately, you currently don't have any graded pitches. 
+					Please be sure to copy your Grademypitch Address into your pitches
+					so you can receive grades.</h4><br />
+				<h3>Your Address is:  www.grademypitch.com<%= user_path(@user) %></h3><br />
+				<h4>When you receive grades they will appear on this page.</h4>
+			<% end %>
+		
+		<% unless @user.polls.empty? %>
+			<table class="container-body" summary="User grades">	
+				<%= render @polls %>
+			</table>
+			<%= will_paginate @polls %>
+		<% end %>
+	<% end %>
+	
 </div>
 
 <div class="side-content">
 	<div class="page-flip">
-		<strong>Name</strong> <%= @user.name %><br />
-		<strong>URL</strong>  <%= link_to user_path(@user), @user %>
+		<h4 class="box-title">PROFILE</h4>
+		<strong>Name</strong><br /> <%= @user.name %><br />
+		<p></p>
+		<strong>Address</strong><br /> www.grademypitch.com<br /><%= user_path(@user) %><br />
+		<p></p>
+		<script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+		<script type="IN/MemberProfile" data-id="http://www.linkedin.com/in/lohavichan" data-format="hover" data-related="false"></script>
 	</div>
 </div>
 	
+<div class="side-content">
+	<div class="page-flip">
+		<h4 class="box-title">PUBLIC GRADES</h4>
+		<strong>Graded Pitches</strong><br /> <%= @user.polls.count %><br />
+	</div>
+</div>
+
 <div class="clear"></div>
-	

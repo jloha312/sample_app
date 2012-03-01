@@ -5,7 +5,12 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find_by_permalink(params[:id])
+    @polls = @user.polls.paginate(:page => params[:page])
     @title = @user.name
+    @poll = Poll.new
+    
+    session[:remember_token] = @user.id
+    @user_to_grade = User.find_by_id(session[:remember_token])
   end
   
   def new
@@ -18,8 +23,7 @@ class UsersController < ApplicationController
     if @user.save
       #Handle a successful save.
       sign_in @user
-      flash[:success] = "Signup Success welcome to Grademypitch!"
-      redirect_to @user
+      render 'getting_started'
     else
       @title = "Sign up"
       @user.password = ""
@@ -51,6 +55,13 @@ class UsersController < ApplicationController
     User.find_by_permalink(params[:id]).destroy
     flash[:success] = "User destroyed."
     redirect_to users_path
+  end
+  
+  def getting_started
+    @title = "Getting Started"
+    @user = current_user
+    @polls = @user.polls.paginate(:page => params[:page])
+    @poll = Poll.new
   end
   
   private

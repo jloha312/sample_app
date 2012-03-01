@@ -204,4 +204,28 @@ describe User do
       @user.should be_admin
     end
   end
+  
+  describe "poll associations" do
+    
+    before(:each) do
+      @user = User.create(@attr)
+      @poll1 = Factory(:poll, :user => @user, :created_at => 1.day.ago)
+      @poll2 = Factory(:poll, :user => @user, :created_at => 1.hour.ago)
+    end
+    
+    it "should have a polls attribute" do
+      @user.should respond_to(:polls)
+    end
+    
+    it "should have the right polls in the right order" do
+      @user.polls.should == [@poll2, @poll1]
+    end
+    
+    it "should destroy associated polls" do
+      @user.destroy
+      [@poll1, @poll2].each do |poll|
+        Poll.find_by_id(poll.id).should be_nil
+      end
+    end
+  end
 end

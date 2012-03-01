@@ -1,0 +1,144 @@
+<div class = news-date>
+	<br /><br /><br /><br /><br />
+	<span class="month"></span><br />
+	<br />
+	<span class="year"></span><br />
+	<br />
+
+</div>
+
+<div class="news-item">
+		<h4>	
+		<p>I am using grademypitch to understand how to improve my pitches.
+	   		Your name, email and comments will only be viewable by me. All other grades will be added
+	   		to my public grademypitch scores.</p>
+		<p>Thanks for your help!</p>
+		
+		<% if current_page?(:controller => 'pages', :action => 'help') %>
+			<p>Example User</p>
+		<% else %>
+			<p> <%= @user.name %></p>
+		<% end %>
+		<p></p>
+		<p></p>
+		</h4>
+	
+		<h2 class="box-title">Please grade my pitch below</h2>
+		<h4>* items are required</h4>
+								
+		<%= form_for(@poll) do |f| %>
+			<%= render 'shared/error_messages', :object => f.object %>
+		
+		
+			<div class="pricing_table pricing_three"><!-- BEGIN TABLE CONTAINER -->
+				<ul class="pricing_column_first"><!-- BEGIN DESCRIPTION COLUMN -->
+					<li class="pricing_header1"></li>
+						<li class="odd">
+							<a class="tooltip" href="#">*Overall Grade
+				        		<span>Overall, how would you rate my pitch?</span>
+							</a>
+						</li>       
+						<li class="even">
+					    	<a class="tooltip" href="#">Relevance
+					        	<span>Did I send you a pitch that was relevant to what you work on?</span>
+					        </a>
+					    </li>
+					    <li class="odd">
+					        <a class="tooltip" href="#">Personalization
+					            <span>Did I know your name and other personal details?</span>
+					        </a>
+					    </li>
+					    <li class="even">
+					    	<a class="tooltip" href="#">Design
+					    		<span>Was my pitch written and structured effectively?</span>
+					        </a>
+					    </li>
+					    <li class="odd">
+					    	<a class="tooltip" href="#">Value Proposition
+					        	<span>Was the offer of my pitch compelling for you to act on it?</span>
+					        </a>
+					    </li>
+
+
+				</ul><!-- END DESCRIPTION COLUMN -->
+
+
+					    <!-- BEGIN HOVER AREA -->
+
+
+					        <ul class="pricing_column gradient_green"><!-- BEGIN FIRST CONTENT COLUMN -->
+
+					            <li class="pricing_header1">Strong</li>
+								<li class="odd"><%= f.radio_button :overall_grade, 'strong' %></span></li>
+					            <li class="even"><%= f.radio_button :relevance, 'strong' %></span></li>
+					            <li class="odd"><%= f.radio_button :personalization, 'strong' %></span></li>
+					            <li class="even"><%= f.radio_button :design, 'strong' %></span></li>
+					            <li class="odd"><%= f.radio_button :value_proposition, 'strong' %></span></li>
+
+					        </ul><!-- END FIRST CONTENT COLUMN -->
+
+
+					        <ul class="pricing_column gradient_red"><!-- BEGIN SECOND CONTENT COLUMN -->
+
+					            <li class="pricing_header1">Weak</li>
+					            <li class="odd"><%= f.radio_button :overall_grade, 'weak' %></span></li>
+					            <li class="even"><%= f.radio_button :relevance, 'weak' %></span></li>
+					            <li class="odd"><%= f.radio_button :personalization, 'weak' %></span></li>
+					            <li class="even"><%= f.radio_button :design, 'weak' %></span></li>
+					            <li class="odd"><%= f.radio_button :value_proposition, 'weak' %></span></li>
+
+					        </ul><!-- END SECOND CONTENT COLUMN -->
+
+
+						<!-- END HOVER AREA -->
+
+
+					</div><!-- END TABLE CONTAINER -->
+					<p>All the above information will be included in my public grademypitch scores.</p>
+					
+			<div class="home-column"><br />
+				<div class="field">
+					<%= f.label :name %><br />
+					<%= f.text_field :responder_name %>
+					<% if current_page?(:controller => 'pages', :action => 'help') %>
+						<p>Viewable only by Example User.</p>
+					<% else %>
+						<p>Viewable only by <%= @user.name %>.</p>
+					<% end %>
+				</div>
+			
+				<div class="field">
+					<%= f.label :email %><br />
+					<%= f.text_field :responder_email %>
+					<% if current_page?(:controller => 'pages', :action => 'help') %>
+						<p>Viewable only by Example User.</p>
+					<% else %>
+						<p>Viewable only by <%= @user.name %>.</p>
+					<% end %>
+				</div>
+			
+				<div class="field">
+					<%= f.label :comments %><br />
+					<%= f.text_area :comments %>
+					<% if current_page?(:controller => 'pages', :action => 'help') %>
+						<p>Viewable only by Example User.</p>
+					<% else %>
+						<p>Viewable only by <%= @user.name %>.</p>
+					<% end %>
+				</div>
+			</div>
+			
+			
+				<div class="home-column"><br />
+					<% if current_page?(:controller => 'pages', :action => 'help') %>
+						<%= f.submit "Submit Grade", :disabled => true, :id => 'actions' do -%>
+							<% end %>
+					<% else %>
+						<%= f.submit "Submit Grade", :id => 'actions' do -%>
+							<% end %>
+					<% end %>
+				</div>
+							
+		<% end %>
+</div>
+<div class="clear"></div>

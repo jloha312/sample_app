@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @title = "Home"
+    @poll = Poll.new
   end
 
   def contact
@@ -13,5 +14,7 @@ class PagesController < ApplicationController
   
   def help
     @title = "Help"
+    @user = current_user
+    @poll = Poll.new
   end
 end

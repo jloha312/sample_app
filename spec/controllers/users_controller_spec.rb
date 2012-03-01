@@ -87,9 +87,45 @@ describe UsersController do
       response.should have_selector("h2", :content => @user.name)
     end
     
-    it "should ahve a profile image" do
+    it "should have a profile image" do
       get :show, :id => @user
       response.should have_selector("h2>img", :class => "gravatar")
+    end
+    
+    it "should show the user's poll results" do
+      poll1 = Factory( :poll,
+                       :user => @user,
+                       :overall_grade      =>  "strong",
+                       :personalization    =>  "strong",
+                       :relevance          =>  "strong",
+                       :value_proposition  =>  "strong",
+                       :design             =>  "strong",
+                       :other              =>  "good timing",
+                       :responder_name     =>  "Tester1",
+                       :responder_email    =>  "tester1@gmail.com",
+                       :comments           =>  "Really like it - let's talk!",
+                       :next_steps         =>  "Setup a Call"
+                    )
+                    
+      poll2 = Factory( :poll,
+                       :user => @user,
+                       :overall_grade      =>  "weak",
+                       :personalization    =>  "weak",
+                       :relevance          =>  "weak",
+                       :value_proposition  =>  "weak",
+                       :design             =>  "weak",
+                       :other              =>  "bad timing",
+                       :responder_name     =>  "Tester2",
+                       :responder_email    =>  "tester2@gmail.com",
+                       :comments           =>  "Just aweful!",
+                       :next_steps         =>  "none"
+                    )
+                    
+        get :show, :id => @user
+        response.should have_selector("img", :class => "pricing_yes")
+        response.should have_selector("img", :class => "pricing_no")
+        response.should have_selector("span.content", :content => poll1.comments)
+        response.should have_selector("span.content", :content => poll2.comments)
     end
   end
 

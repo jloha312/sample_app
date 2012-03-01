@@ -1,0 +1,138 @@
+<tr>
+	
+	<h4 class="box-title"></h4>
+	
+	
+	<div class="news-date">
+		<span class="month"><%= (poll.created_at.strftime("%b")) %></span><br />
+    	<span class="day"><%= (poll.created_at.strftime("%d")) %></span><br />
+		<span class="year"><%= (poll.created_at.strftime("%Y")) %></span><br />
+		<br />
+		<span class ="year">
+			<%= time_ago_in_words(poll.created_at) %> ago
+		</span>
+	</div>
+		
+	<div class="news-item">
+		<h3>YOUR PITCH WAS GRADED</h3>
+		<h4><strong>Grader </strong><span class="content"><%= poll.responder_name %></span></h4>
+		<h4><strong>Email  </strong><span class="content"><%= poll.responder_email %></span></h4><br /><br />		
+					
+			<div class="pricing_table pricing_three"><!-- BEGIN TABLE CONTAINER -->
+				<ul class="pricing_column_first"><!-- BEGIN DESCRIPTION COLUMN -->
+					<li class="pricing_header1"></li>
+						<li class="odd">
+							<a class="tooltip" href="#">Overall Grade
+				        		<span>Overall, what the grader thought of your pitch.</span>
+							</a>
+						</li>       
+						<li class="even">
+					    	<a class="tooltip" href="#">Relevance
+					        	<span>Did you do enough research to determine if the pitch was relevant to the grader?</span>
+					        </a>
+					    </li>
+					    <li class="odd">
+					        <a class="tooltip" href="#">Personalization
+					            <span>Did you personalize the pitch enough?</span>
+					        </a>
+					    </li>
+					    <li class="even">
+					    	<a class="tooltip" href="#">Design
+					    		<span>Was this pitch written and structured effectively?</span>
+					        </a>
+					    </li>
+					    <li class="odd">
+					    	<a class="tooltip" href="#">Value Proposition
+					        	<span>Was the offer of your pitch interesting or not?</span>
+					        </a>
+					    </li>
+
+
+				</ul><!-- END DESCRIPTION COLUMN -->
+
+
+					    <!-- BEGIN HOVER AREA -->
+
+
+					        <ul class="pricing_column gradient_green"><!-- BEGIN FIRST CONTENT COLUMN -->
+
+					            <li class="pricing_header1">Strong</li>
+								<li class="odd">
+									<% if poll.overall_grade == "strong" %>
+										<span class="pricing_yes"></span>
+									<% end %>
+								</li>
+					            <li class="even">
+									<% if poll.relevance == "strong" %>
+										<span class="pricing_yes"></span>
+									<% end %>
+								</li>
+					            <li class="odd">
+									<% if poll.personalization == "strong" %>
+										<span class="pricing_yes"></span>
+									<% end %>
+								</li>
+					            <li class="even">
+					            	<% if poll.design == "strong" %>
+										<span class="pricing_yes"></span>
+									<% end %>
+					            </li>
+					            <li class="odd">
+					            	<% if poll.value_proposition == "strong" %>
+										<span class="pricing_yes"></span>
+									<% end %>
+					            </li>
+					            
+					        </ul><!-- END FIRST CONTENT COLUMN -->
+
+
+					        <ul class="pricing_column gradient_red"><!-- BEGIN SECOND CONTENT COLUMN -->
+
+					            <li class="pricing_header1">Weak</li>
+					            <li class="odd">
+									<% if poll.overall_grade == "weak" %>
+										<span class="pricing_no"></span>
+									<% end %>
+								</li>
+					            <li class="even">
+									<% if poll.relevance == "weak" %>
+										<span class="pricing_no"></span>
+									<% end %>
+								</li>
+					            <li class="odd">
+					            	<% if poll.personalization == "weak" %>
+										<span class="pricing_no"></span>
+									<% end %>
+					            </li>
+					            <li class="even">
+									<% if poll.design == "weak" %>
+										<span class="pricing_no"></span>
+									<% end %>
+								</li>
+					            <li class="odd">
+									<% if poll.value_proposition == "weak" %>
+										<span class="pricing_no"></span>
+									<% end %>
+								</li>
+					            
+					        </ul><!-- END SECOND CONTENT COLUMN -->
+
+
+						<!-- END HOVER AREA -->
+
+
+					</div><!-- END TABLE CONTAINER -->
+					
+			        <div class="home-column">
+					
+						<div class="page-flip"><br />
+							<br /><h4><strong>Comments</strong></h4>
+									<span class="content"><%= poll.comments %></span><br /><br />			
+						</div>
+					
+					</div>
+			
+		</div>			
+	<div class="clear"></div>
+	
+</tr>
