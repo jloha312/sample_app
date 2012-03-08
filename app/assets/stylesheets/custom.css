@@ -367,7 +367,7 @@ form.contact  label {
 	width: 125px;
 }
 
-form.contact    .element      {
+form.contact    .element {
 	margin-left: 5px;
 	border: 1px solid #DDDAC3;
 	float: left;
@@ -519,7 +519,7 @@ ul.users {
 
 /* Button styling */
 
-a.button_new{
+a.button_new {
 	cursor:pointer;
 	font-family:Arial, Helvetica, sans-serif;
 	font-size:16px; 
@@ -614,22 +614,24 @@ TABLE OF CONTENTS
 	color: #313131;
 	width:500px;
 }
+
 .pricing_table ul {
 	margin: 0px;
 	padding: 0px;
 	list-style: none;
 }
-	.pricing_table ul li {
-		margin: 0px;
-		width: 100%;
-		height: 100%;
-		height: 26px;
-		padding-top: 10px;
-		float: left;
-		text-shadow: 1px 1px 0px #ffffff;
-		text-align: center;
-		padding-left: 0px;
-	}
+
+.pricing_table ul li {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	height: 26px;
+	padding-top: 10px;
+	float: left;
+	text-shadow: 1px 1px 0px #ffffff;
+	text-align: center;
+	padding-left: 0px;
+}
 
 
 
@@ -912,24 +914,26 @@ TABLE OF CONTENTS
 	box-shadow:0px 1px 0px rgba(000,000,000,0.8), inset 0px 1px 1px rgba(255,255,255,0.3);
 
 }
-	.pricing_table a.pricing_button:hover {
-		background-image: -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
-		background-image: -webkit-linear-gradient-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2)));
-		background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
-		background-image: -o-linear-gradient(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2));
-		background-image: -ms-linear-gradient(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2));
-		background-image: no-repeat;
-		border: 1px solid rgba(0, 0, 0, 0.2);
-	}
-	.pricing_table a.pricing_button:active {
-		background-image: -moz-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0));
-		background-image: -webkit-linear-gradient-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0,2)), to(rgba(0, 0, 0, 0)));
-		background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
-		background-image: -o-linear-gradient(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0));
-		background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0));
-		background-image: no-repeat;
-		border: 1px solid rgba(0, 0, 0, 0.2);
-	}
+
+.pricing_table a.pricing_button:hover {
+	background-image: -moz-linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.2));
+	background-image: -webkit-linear-gradient-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2)));
+	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+	background-image: -o-linear-gradient(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2));
+	background-image: -ms-linear-gradient(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2));
+	background-image: no-repeat;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+	
+.pricing_table a.pricing_button:active {
+	background-image: -moz-linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0));
+	background-image: -webkit-linear-gradient-webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0)));
+	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+	background-image: -o-linear-gradient(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0));
+	background-image: -ms-linear-gradient(rgba(0, 0, 0, 0.2)), to(rgba(0, 0, 0, 0));
+	background-image: no-repeat;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
 
 
 
@@ -949,50 +953,53 @@ TABLE OF CONTENTS
 	_background:url(ie_help.gif) right center no-repeat;
 	padding:0 20px 0 10px;
 }
-	.pricing_table a.tooltip:hover {
-		z-index:25;
-		display:inline;
-	}
-	.pricing_table a.tooltip span {
-		position:absolute;
-		width: 220px;
-		left: 10px;
-		top: 25px;
-		text-align:left;
-		color: #ffffff;
-		font-size:11px;
-		line-height:16px;
-		background: rgba(0,0,0,0.9); 
-		background: #000000; 
-		border: 1px solid #000000;
-		text-shadow:none;
-		padding: 7px 10px 7px 10px;
-		-webkit-border-radius:5px;
-		-khtml-border-radius:5px;
-		-moz-border-radius:5px;
-		border-radius:5px;
-		display:block;
-		/* Hiding the tooltip */
-		visibility:hidden;
-		opacity: 0;
-		/* Removing transition when the mouse leaves the tooltip - Fixing a display issue */
-		-webkit-transition: all 0s ease;
-		-moz-transition: all 0s ease;
-		-o-transition: all 0s ease;
-		-ms-transition: all 0s ease;
-		transition: all 0s ease;
-	}
-		.pricing_table a.tooltip:hover span {
-			/* CSS3 Transition */
-			-webkit-transition: all 0.4s ease;
-			-moz-transition: all 0.4s ease;
-			-o-transition: all 0.4s ease;
-			-ms-transition: all 0.4s ease;
-			transition: all 0.4s ease;
-			/* Showing the tooltip */
-			visibility:visible;
-			opacity: 1;
-		}
+
+.pricing_table a.tooltip:hover {
+	z-index:25;
+	display:inline;
+}
+
+.pricing_table a.tooltip span {
+	position:absolute;
+	width: 220px;
+	left: 10px;
+	top: 25px;
+	text-align:left;
+	color: #ffffff;
+	font-size:11px;
+	line-height:16px;
+	background: rgba(0,0,0,0.9); 
+	background: #000000; 
+	border: 1px solid #000000;
+	text-shadow:none;
+	padding: 7px 10px 7px 10px;
+	-webkit-border-radius:5px;
+	-khtml-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	display:block;
+	/* Hiding the tooltip */
+	visibility:hidden;
+	opacity: 0;
+	/* Removing transition when the mouse leaves the tooltip - Fixing a display issue */
+	-webkit-transition: all 0s ease;
+	-moz-transition: all 0s ease;
+	-o-transition: all 0s ease;
+	-ms-transition: all 0s ease;
+	transition: all 0s ease;
+}
+
+.pricing_table a.tooltip:hover span {
+	/* CSS3 Transition */
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	-o-transition: all 0.4s ease;
+	-ms-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+	/* Showing the tooltip */
+	visibility:visible;
+	opacity: 1;
+}
 
 
 
@@ -1030,83 +1037,12 @@ TABLE OF CONTENTS
 
 
 
-/*  _______________________________________
-
-	06 DARK TABLE
-    _______________________________________  */
-
-
-
-
-.pricing_dark_style {
-	color: #fefefe;
-	background-color:#000000;
-}
-	.pricing_dark_style ul li {
-		text-shadow: 1px 1px 1px #000000;
-	}
-.pricing_dark_style li.pricing_header1 {
-	color:#ffffff;
-	text-shadow: 1px 1px 1px #000000;
-}
-.pricing_dark_style li.pricing_header2 {
-	border-bottom:1px solid #000000;
-	border-top:1px solid #000000;
-	text-shadow: 1px 1px 1px #000000;
-	/* Gradient */
-	background-color:#121212;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(100%, #121212));
-	background-image: -webkit-linear-gradient(#181818 0%, #121212 100%);
-	background-image: -moz-linear-gradient(#181818 0%, #121212 100%);
-	background-image: -o-linear-gradient(#181818 0%, #121212 100%);
-	background-image: -ms-linear-gradient(#181818 0%, #121212 100%);
-	background-image: linear-gradient(#181818 0%, #121212 100%);
-}
-.pricing_dark_style .pricing_column_first li.pricing_header2 {
-	background-color:#121212;
-	border-bottom:1px solid #000000;
-}
-.pricing_dark_style .odd {
-	background-color: #181818;
-	border-bottom:1px solid #000000;
-}
-.pricing_dark_style .even {
-	background-color: #121212;
-	border-bottom:1px solid #000000;
-}
-.pricing_dark_style .pricing_footer {
-	border-top: 1px solid #090909;
-	border-bottom: 2px solid #000000;
-	background-color: #121212;
-}
-.pricing_dark_style a.tooltip {
-	color: #fefefe;
-}
-
-
 .grading_table {
 	font-family:Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	font-weight: normal;
 	color: #313131;
 	width:50px;
-}
-
-
-.grading_table .grading_yes,
-.grading_table .grading_no {
-	height:20px;
-	width:100%;
-	float:left;
-}
-
-.grading_table .grading_yes {
-	background:url(yes.png) center top no-repeat; 
-	_background:url(ie_yes.gif) center top no-repeat; 
-}
-.grading_table .grading_no {
-	background:url(no.png) center top no-repeat; 
-	_background:url(ie_no.gif) center top no-repeat; 
 }
 
 .strong_grade {
