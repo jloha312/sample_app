@@ -9,8 +9,9 @@ class UsersController < ApplicationController
     @title = @user.name
     @poll = Poll.new
     
-    session[:remember_token] = @user.id
+    session[:current_polluser] = @user.id
     @user_to_grade = User.find_by_id(session[:remember_token])
+    
   end
   
   def new

@@ -7,4 +7,9 @@ class Poll < ActiveRecord::Base
   validates :overall_grade, :presence => true
    
   default_scope :order => 'polls.created_at DESC'
+  
+  scope :strong, where(:overall_grade => 'strong')
+  scope :weak, where(:overall_grade => 'weak')
+  
+  
 end

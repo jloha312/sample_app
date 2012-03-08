@@ -1084,3 +1084,59 @@ TABLE OF CONTENTS
 }
 
 
+.grading_table {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #313131;
+	width:50px;
+}
+
+
+.grading_table .grading_yes,
+.grading_table .grading_no {
+	height:20px;
+	width:100%;
+	float:left;
+}
+
+.grading_table .grading_yes {
+	background:url(yes.png) center top no-repeat; 
+	_background:url(ie_yes.gif) center top no-repeat; 
+}
+.grading_table .grading_no {
+	background:url(no.png) center top no-repeat; 
+	_background:url(ie_no.gif) center top no-repeat; 
+}
+
+.strong_grade {
+	color:#FFFFFF;
+	font-size: 14px;
+	text-align:center;
+	background-color: #659B2C;
+	width:100px;
+}
+
+.weak_grade {
+	color:#FFFFFF;
+	font-size: 14px;
+	text-align:center;
+	background-color: #B04444;
+	width:100px;
+}
+
+.average_grade {
+	color:#FFFFFF;
+	font-size: 14px;
+	text-align:center;
+	background-color: #F4BA00;
+	width:100px;
+}
+
+.no_grade {
+	color:#FFFFFF;
+	font-size: 14px;
+	text-align:center;
+	background-color: #389DAD;
+	width:100px;
+}

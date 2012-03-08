@@ -1,18 +1,15 @@
 class PollsController < ApplicationController
   
   def create
-    if current_user.blank?
-      user_to_grade = User.find_by_id(session[:remember_token])
-      @poll = user_to_grade.polls.build(params[:poll])
-    else
-      @poll = current_user.polls.build(params[:poll])
-    end    
     
+    user_to_grade = User.find_by_id(session[:current_polluser])
+    @poll = user_to_grade.polls.build(params[:poll])
+    		    
     if @poll.save
       flash[:success] = "Pitch graded successfully!"
-      redirect_to root_path
+      render 'poll_recap'
     else
-      render 'pages/home'
+      render 'new'
     end
   end
 

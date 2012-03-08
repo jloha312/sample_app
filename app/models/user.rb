@@ -62,6 +62,34 @@ class User < ActiveRecord::Base
     permalink
   end
   
+  def grade_status
+  
+     if polls.count == 0
+        return "notyet"
+      else
+        @strong_count = polls.strong.count
+        @weak_count = polls.weak.count
+
+        if @weak_count == 0
+          @overall_grade_status = "strong"
+        else
+          @overall_grade_score = @strong_count / @weak_count
+          if @overall_grade_score > 1
+            @overall_grade_status = "strong"
+          end
+          if @overall_grade_score == 1
+            @overall_grade_status = "average"
+          end
+          if @overall_grade_score < 1
+            @overall_grade_status = "weak"
+          end
+        end
+
+      end
+    return @overall_grade_status
+  end
+  
+  
   private
     def encrypt_password
       self.salt = make_salt unless has_password?(password)
