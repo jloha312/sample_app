@@ -1,9 +1,56 @@
-<h1>This is the home page for Grademypitch</h1>
-	<p>Place informative text here...
-		
-	</p>
+<p></p>
+<h6>Defeat Silence</h6>
+<p></p>
+
+
+<%= image_tag("Silence400px.jpg", alt: "Silence Picture", class: "silence_logo") %>
+
+<div class="text_center">
+	<h2>ask for feedback to create your winning pitch</h2>
+</div>
+
+<p></p>
+<p></p>
+<p></p>
+
+<div class="padding">
+
+	<!--about group-->
+	<div class="home-content">
+		<%= image_tag("speak200px.jpg", alt: "Speaking Picture", class: "speaking_logo") %>
 	
+		<div class="page-flip page-flip-home">
+			<h3 class="box-title">Collecting feedback is easy</h3>
+	    	<p><span class="large-text">Add your link to every pitch.</span></p>	
+	    	<p><strong>www.grademypitch.com/users/exampleuser</strong></p>
+		</div>
+	</div>
+
+	<!--services group-->
+	<div class="home-content">
+		<%= image_tag("listen200px.jpg", alt: "Speaking Picture", class: "speaking_logo") %>
+	
+		<div class="page-flip page-flip-home">
+			<h3 class="box-title text_center">Improve your pitches</h3>
+	   	 	<p><span class="large-text">Ratings tell you what to improve.</span></p>
+			<%= image_tag("Feedback200px.png", alt: "Feedback Picture", class: "feedback_logo") %>
+		</div>
+		<p></p>
+		<p></p>
+		<p></p>
+	</div>
+		
 	<% if current_user.blank? %>
-		<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+		<div class="button-column">
+			<%= link_to "Sign up now to start creating better pitches", signup_path, :class => "button_center button_new" %>
+		</div>
 	<% end %>
 	
+	<p></p>
+	<p></p>
+
+	<div class="clear"></div>
+
+</div>	
+
+

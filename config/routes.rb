@@ -13,10 +13,10 @@ SampleApp::Application.routes.draw do
   
   root :to => 'pages#home'
   
-  match '/contact', :to => 'pages#contact'
   match '/about',   :to => 'pages#about'
   match '/help',    :to => 'pages#help'
-  
+  match '/privacy', :to => 'pages#privacy'
+  match '/tos',     :to => 'pages#tos'
   
   
   # Old version used with Pages Controller
