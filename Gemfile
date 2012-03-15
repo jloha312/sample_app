@@ -10,8 +10,7 @@ gem "pg", "~> 0.11.0"
 
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'will_paginate', '3.0.pre2'
-gem 'rufus-mnemo', '1.2.2'
-gem 'ruby-debug19', '~> 0.11.6'
+#gem 'rufus-mnemo', '1.2.2'
 
 
 # For Surveyor
@@ -27,6 +26,7 @@ group :development do
 	gem 'rspec-rails', '2.6.1'
 	gem 'annotate', '~> 2.4.1.beta'
 	gem 'faker', '0.3.1'
+	gem 'ruby-debug19', '~> 0.11.6'
 end
 
 group :test do
