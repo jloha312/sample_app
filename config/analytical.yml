@@ -1,0 +1,5 @@
+production:
+  kissmetrics:
+    key: 2a57dda8e3b6fde57b00a09a80b651a8368d7e76   
+development:
+test:
