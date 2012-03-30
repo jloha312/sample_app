@@ -3,9 +3,7 @@
 		<%= gravatar_for @user %>
 		<%= @user.name %>
 	</h2>
-	
-	<% debugger %>
-	
+		
 	<% if current_user.blank? %>
     	<%= render 'shared/poll_form' %>
 	<% else %>
